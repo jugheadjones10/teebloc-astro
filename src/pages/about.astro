@@ -15,43 +15,43 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
   <Container>
     <Sectionhead>
       <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="desc">We aim to revolutionise the Singapore education industry with LLM technology.</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
-      </h2>
+      <!-- <h2 class="font-bold text-3xl text-gray-800"> -->
+      <!--   Empowering students, educators and parents with LLM technology -->
+      <!-- </h2> -->
       <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        We leverage LLM technology to automatically categorise thousands of past year paper questions into their respective topics. We then generate custom pdf practice worksheets for students containing only the question types that they want to drill on.<br/><br/>
+        Our long-term vision is to use LLMs to automate manual workflows of educators across Singapore - marking of questions, generation of new question variations, generating student-tailored practice papers, etc.<br/><br/>
+        Existing online solutions only let you download full past year papers, which require post-processing by teachers to sort into relevant topics, crop and paste into a new worksheet format, which is time-consuming.
       </p>
     </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      {
-        publishedTeamMembers.map((teamMemberEntry) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Picture
-                src={teamMemberEntry.data.avatar.src}
-                alt={teamMemberEntry.data.avatar.alt}
-                sizes="(max-width: 800px) 100vw, 400px"
-                width={400}
-                height={400}
-                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
-              />
-            </div>
-
-            <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
-              <h3 class="text-sm text-slate-500">
-                {teamMemberEntry.data.title}
-              </h3>
-            </div>
-          </div>
-        ))
-      }
-    </div>
+    <!-- <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12"> -->
+    <!--   { -->
+    <!--     publishedTeamMembers.map((teamMemberEntry) => ( -->
+    <!--       <div class="group"> -->
+    <!--         <div class="w-full aspect-square"> -->
+    <!--           <Picture -->
+    <!--             src={teamMemberEntry.data.avatar.src} -->
+    <!--             alt={teamMemberEntry.data.avatar.alt} -->
+    <!--             sizes="(max-width: 800px) 100vw, 400px" -->
+    <!--             width={400} -->
+    <!--             height={400} -->
+    <!--             class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square" -->
+    <!--           /> -->
+    <!--         </div> -->
+    <!---->
+    <!--         <div class="mt-4 text-center"> -->
+    <!--           <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2> -->
+    <!--           <h3 class="text-sm text-slate-500"> -->
+    <!--             {teamMemberEntry.data.title} -->
+    <!--           </h3> -->
+    <!--         </div> -->
+    <!--       </div> -->
+    <!--     )) -->
+    <!--   } -->
+    <!-- </div> -->
   </Container>
 </Layout>

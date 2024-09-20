@@ -19,9 +19,9 @@ publishedBlogEntries.sort(function (a, b) {
 <Layout title="Blog">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
+      <Fragment slot="title">Blog</Fragment>
       <Fragment slot="desc">
-        We write about building startups and thoughts going on our mind.
+        Insider analysis on hacking PSLE, O-levels, and A-levels. We mine data from hundreds of past year papers to bring you best-in-class strategies, tips, and tricks.
       </Fragment>
     </Sectionhead>
     <main class="mt-16">
@@ -32,8 +32,8 @@ publishedBlogEntries.sort(function (a, b) {
               <a href={`/blog/${blogPostEntry.slug}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
                   <Picture
-                    src={blogPostEntry.data.image.src}
-                    alt={blogPostEntry.data.image.alt}
+                    src={blogPostEntry.data.cover}
+                    alt=""
                     sizes="(max-width: 800px) 100vw, 800px"
                     width={800}
                     height={600}
