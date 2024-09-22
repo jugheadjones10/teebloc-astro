@@ -45,7 +45,7 @@ Tools like Anki, Quizlet, or even Notion’s recall features can help you automa
 
 ![schedule](./spaced-repetition-images/schedule.png)
 
-[\*The 2,3,5,7 Method](https://www.notion.so/Blog-Post-1-How-To-Study-Spaced-Repetition-6f4431fb53b3494b8e9ceeda75b46d8d?pvs=21) (A method to plan out your intervals)\*
+[\*The 2,3,5,7 Method](https://www.bcu.ac.uk/exams-and-revision/best-ways-to-revise/spaced-repetition) (A method to plan out your intervals)\*
 
 The idea is to review the material at intervals that become progressively longer. For example:
 
