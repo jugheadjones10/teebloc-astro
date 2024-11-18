@@ -33,7 +33,7 @@ While switching topics may feel tricky, it actually improves your ability to app
 
 _💡**Tip**: Interleaving is especially useful for overlapping subjects like math, languages, or sciences._
 
-![image 1](./interleaving-images/image%201.png)
+![image 1](./interleaving-images/image-1.png)
 
 ---
 
