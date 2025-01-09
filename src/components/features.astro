@@ -1,6 +1,7 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
+import PricingCard from "@components/pricing.astro";
 
 const steps = [
   "Filter questions by subject, topic, level, paper type, assessment type, and school",
@@ -10,15 +11,15 @@ const steps = [
 ---
 
 <div class="mt-16">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mb-4">
     Get ahead of the bell curve
   </h2>
-  <p class="text-lg mt-4 text-slate-600">
+  <p class="text-lg text-slate-600">
     Stop wasting time on unfocused practice. Maximise your learning by drilling your weakest topics.
   </p>
 </div>
 
-<div class="mt-8">
+<div class="mt-8 border-4 border-black rounded-lg">
   <video class="w-full rounded-lg" controls>
     <source src="/intro-video.mp4" type="video/mp4" />
     Your browser does not support the video tag.
@@ -26,10 +27,22 @@ const steps = [
 </div>
 
 <div class="mt-16">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mb-4">
     Pricing
   </h2>
-  <p class="text-lg mt-4 text-slate-600">
-    Free for 1 week. Afterwards, pay 10 cents per open ended question and 5 cents per multiple choice question.
-  </p>
+
+  <PricingCard plan={{
+    // name: "Personal",
+    price: "$8.50/month",
+    features: [
+      "Create unlimited number of worksheets",
+      "Access to our latest database of questions from past year papers",
+      "Access to future features such as automatic marking of compositions, chatbot for SG exam syllabus, etc",
+      "Receive live support from our team in the Telegram group"
+    ],
+    button: {
+      text: "Get Started",
+      link: "https://accounts.teebloc.com/sign-up?redirect_url=https://app.teebloc.com/"
+    },
+  }} />
 </div>
