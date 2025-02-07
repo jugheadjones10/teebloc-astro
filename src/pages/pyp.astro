@@ -3,6 +3,35 @@ import { Picture } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import PaperList from "@components/PaperList.tsx";
+
+// GraphQL query
+const query = `
+  query GetPyps {
+    pyps(order_by: {school: asc}) {
+      id
+      title
+      year
+      type
+      subject
+      school
+      level
+      s3_url
+    }
+  }
+`;
+
+// Fetch data from Hasura
+const response = await fetch('https://teebloc.hasura.app/v1/graphql', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'x-hasura-admin-secret': import.meta.env.HASURA_ADMIN_SECRET,
+  },
+  body: JSON.stringify({ query }),
+});
+const {data} = await response.json();
+const pyps = data.pyps;
 ---
 
 <Layout title="Free Past Year Papers">
@@ -14,24 +43,7 @@ import Sectionhead from "@components/sectionhead.astro";
       </Fragment>
     </Sectionhead>
     <main class="mt-16">
-      <h1 class="text-2xl font-medium">P6 Science</h1>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/RXRxnHji?inline=true">ACS (Junior) Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/kbKJM5QT?inline=true">ACS (Primary) Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/l8lQ8muQ?inline=true">Ai Tong School Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/2WeCUIJF?inline=true">Catholic High School Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/1mhy7e8x?inline=true">CHIJ St Nicholas Girls' School Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/VR-o0F4d?inline=true">Maris Stella High School Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/b-4JhucL?inline=true">Methodist Girls' School Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/YmvtIFtH?inline=true">Nan Hua Primary School Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/ji7NgGLO?inline=true">Nanyang Primary School Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/eOX4pywj?inline=true">Pei Chun Primary School Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/ctdfK-0L?inline=true">Pei Hwa Presbyterian Primary School Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/36DsmKtS?inline=true">Raffles Girls' Primary School Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/rs4y_YuV?inline=true">Red Swastika School Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/pqkBqtHk?inline=true">Rosyth School Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/yWqTLdAR?inline=true">Singapore Chinese Girls' School SA2 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/23WL6wyY?inline=true">Tao Nan School Prelim 2023</a></div>
-      <div><a target="_blank" class="text-blue-600 hover:text-blue-800 underline" href="http://143.198.214.104:8080/api/public/dl/mC2FlMdu?inline=true">Temasek Primary School Prelim 2023</a></div>
+      <PaperList papers={pyps} />
     </main>
   </Container>
 </Layout>
