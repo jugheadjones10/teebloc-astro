@@ -9,7 +9,7 @@ Currently, our PaperList component displays a simple list of past year papers. W
 1. Clone the repository
 
 ```bash
-git clone https://github.com/teebloc/pyps.git
+git clone https://github.com/jugheadjones10/teebloc-astro.git
 ```
 
 2. Install dependencies:
