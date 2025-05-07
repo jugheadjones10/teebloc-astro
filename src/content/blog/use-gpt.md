@@ -2,7 +2,7 @@
 draft: false
 title: "How to Use ChatGPT to Accelerate Your Learning"
 snippet: ""
-publishDate: "2025-05-07 15:36"
+publishDate: "2024-05-07 15:36"
 cover: "./use-gpt-images/cover.png"
 category: "Study Techniques"
 author: "Michelle Chen"
