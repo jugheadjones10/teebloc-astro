@@ -14,7 +14,6 @@ const publishedBlogEntries = await getCollection("blog", ({ data }) => {
 publishedBlogEntries.sort(function (a, b) {
   return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
 });
-console.log("Blog posts: ", publishedBlogEntries.map((entry) => entry.id));
 ---
 
 <Layout title="Blog">
