@@ -60,3 +60,12 @@ You have 10 minutes for this section.
 ---
 
 Using AI tools like ChatGPT can help refine your answers, broaden your vocabulary, and structure your thoughts more clearly, all essential skills for excelling in your O-Level Oral exams.
+
+---
+
+<div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 rounded-lg text-center my-6">
+
+  <p class="mb-4 text-left">
+    <a href="https://accounts.teebloc.com/sign-up?redirect_url=https://app.teebloc.com/" class="hover:no-underline text-white">Sign up for Teebloc</a> to create custom worksheets by topic, using questions from Singapore top schools.
+  </p>
+</div>
