@@ -17,8 +17,6 @@ It’s the final stretch before PSLE. With just a month to go, many students (an
 
 Why MCQs?
 
-One of the most effective ways to remember what you revise is through _Active Recall_. Instead of rereading or highlighting, you test yourself by retrieving information from memory. This process strengthens long-term retention and keeps knowledge accessible for exams or everyday use.(find our blog post about it here: [https://teebloc.com/blog/active-recall](https://teebloc.com/blog/active-recall)) Drilling MCQs is one way you can use Active Recall in your revisions.
-
 One of the best ways to retain what you study is through _Active Recall,_ which is to test yourself by retrieving information instead of just rereading or highlighting. This strengthens long-term memory and makes knowledge easier to access during exams (learn more in our blog post: [https://teebloc.com/blog/active-recall](https://teebloc.com/blog/active-recall)). Drilling MCQs is a practical way to apply Active Recall in your revision.
 
 - **Broad coverage in short time:** MCQs test a wide range of topics quickly. Even 20 questions can expose gaps you might have missed.
