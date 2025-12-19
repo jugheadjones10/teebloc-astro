@@ -30,8 +30,11 @@ const response = await fetch('https://teebloc.hasura.app/v1/graphql', {
   },
   body: JSON.stringify({ query }),
 });
-const {data} = await response.json();
-const pyps = data.pyps;
+
+// Defensive parsing to avoid runtime errors when network or auth fails.
+const json = await response.json().catch(() => ({}));
+const data = (json as any)?.data;
+const pyps = Array.isArray(data?.pyps) ? data.pyps : [];
 ---
 
 <Layout title="Free Past Year Papers">
@@ -43,7 +46,7 @@ const pyps = data.pyps;
       </Fragment>
     </Sectionhead>
     <main class="mt-16">
-      <PaperList papers={pyps} />
+      <PaperList client:load papers={pyps} />
     </main>
   </Container>
 </Layout>
