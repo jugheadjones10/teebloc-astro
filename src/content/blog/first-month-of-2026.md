@@ -19,7 +19,7 @@ Dr. Carol Dweck, psychologist at Stanford University, famously said:
 
 > “The path to success is built on preparation — consistent effort, not overnight change.”
 
-So what can you do in these last 2 months of 2025?
+So what can you do at the start of 2026?
 
 ✅ **For Students:**
 
