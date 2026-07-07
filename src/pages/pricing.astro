@@ -6,59 +6,20 @@ import PricingCard from "@components/pricing.astro";
 
 const pricing = [
   {
-    name: "Personal",
-    price: "Free",
-    popular: false,
-    features: [
-      "Lifetime free",
-      "Up to 3 users",
-      "Unlimited Pages",
-      "Astro Sub domain",
-      "Basic Integrations",
-      "Community Support",
-    ],
-    button: {
-      text: "Get Started",
-      link: "/",
-    },
-  },
-  {
-    name: "Startup",
-    price: {
-      monthly: "$19",
-      annual: "$16",
-      discount: "10%",
-      original: "$24",
-    },
+    name: "Teebloc",
+    price: "$8.50/month",
     popular: true,
     features: [
-      "All Free Features",
-      "Up to 20 users",
-      "20 Custom domains",
-      "Unlimited Collaborators",
-      "Advanced Integrations",
-      "Priority Support",
+      "Try up to 3 worksheets for free before subscribing",
+      "Create unlimited worksheets after subscribing",
+      "Access our latest database of past year paper questions",
+      "Mix and match questions by subject, topic, level, paper type, assessment type, and school",
+      "Access future features such as automatic composition marking and SG exam syllabus chatbots",
+      "Receive live support from our team in the Telegram group",
     ],
     button: {
-      text: "Get Started",
-      link: "#",
-    },
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    popular: false,
-    features: [
-      "All Pro Features",
-      "Unlimited Custom domains",
-      "99.99% Uptime SLA",
-      "SAML & SSO Integration",
-      "Dedicated Account Manager",
-      "24/7 Phone Support",
-    ],
-    button: {
-      text: "Contact us",
-      link: "/contact",
+      text: "Try up to 3 free worksheets",
+      link: "https://accounts.teebloc.com/sign-up?redirect_url=https://app.teebloc.com/",
     },
   },
 ];
@@ -69,11 +30,11 @@ const pricing = [
     <Sectionhead>
       <Fragment slot="title">Pricing</Fragment>
       <Fragment slot="desc">
-        Simple & Predictable pricing. No Surprises.
+        Start with up to 3 free worksheets. Subscribe when you need unlimited worksheet creation.
       </Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+    <div class="mx-auto max-w-xl mt-12">
       {pricing.map((item) => <PricingCard plan={item} />)}
     </div>
   </Container>
