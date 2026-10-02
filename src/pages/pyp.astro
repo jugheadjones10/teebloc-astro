@@ -31,10 +31,26 @@ const response = await fetch('https://teebloc.hasura.app/v1/graphql', {
   body: JSON.stringify({ query }),
 });
 
-// Defensive parsing to avoid runtime errors when network or auth fails.
-const json = await response.json().catch(() => ({}));
-const data = (json as any)?.data;
-const pyps = Array.isArray(data?.pyps) ? data.pyps : [];
+const json: unknown = await response.json();
+if (
+  !response.ok ||
+  typeof json !== "object" ||
+  json === null ||
+  "errors" in json ||
+  !("data" in json) ||
+  typeof json.data !== "object" ||
+  json.data === null ||
+  !("pyps" in json.data) ||
+  !Array.isArray(json.data.pyps) ||
+  json.data.pyps.length === 0
+) {
+  const detail =
+    typeof json === "object" && json !== null && "errors" in json
+      ? JSON.stringify(json.errors)
+      : "No papers returned";
+  throw new Error(`Failed to load past year papers from Hasura (HTTP ${response.status}): ${detail}`);
+}
+const pyps = json.data.pyps;
 ---
 
 <Layout title="Free Past Year Papers">
